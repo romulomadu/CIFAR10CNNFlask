@@ -22,14 +22,14 @@ def unpickle_patch(file):
 
 #***********************************************************************************
 #Dataset path containing the testing binary file to be decoded.
-patches_dir = "C:\\Users\\Dell\\Downloads\\Compressed\\cifar-10-python\\cifar-10-batches-py\\"
+patches_dir = "../data/cifar-10-python/cifar-10-batches-py/"
 dataset_array, dataset_labels = get_dataset_images(test_path_path=patches_dir + "test_batch", im_dim=32, num_channels=3)
 print("Size of data : ", dataset_array.shape)
 
 sess = tensorflow.Session()
 
 #Restoring the previously saved trained model.
-saved_model_path = 'C:\\Users\\Dell\\Desktop\\model\\'
+saved_model_path = '../model/'
 saver = tensorflow.train.import_meta_graph(saved_model_path+'model.ckpt.meta')
 saver.restore(sess=sess, save_path=saved_model_path+'model.ckpt')
 

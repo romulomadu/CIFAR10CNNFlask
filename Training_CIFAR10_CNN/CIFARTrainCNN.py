@@ -209,7 +209,7 @@ im_dim = 32
 num_channels = 3
 
 #Directory at which the training binary files of the CIFAR10 dataset are saved.
-patches_dir = "C:\\Users\\Dell\\Downloads\\Compressed\\cifar-10-python\\cifar-10-batches-py\\"
+patches_dir = "../data/cifar-10-python/cifar-10-batches-py/"
 #Reading the CIFAR10 training binary files and returning the input data and output labels. Output labels are used to test the CNN prediction accuracy.
 dataset_array, dataset_labels = get_dataset_images(dataset_path=patches_dir, im_dim=im_dim, num_channels=num_channels)
 print("Size of data : ", dataset_array.shape)
@@ -256,7 +256,7 @@ ops = tensorflow.train.GradientDescentOptimizer(learning_rate=.01).minimize(cost
 #Creating a new TensorFlow Session to process the computational graph.
 sess = tensorflow.Session()
 #Wiriting summary of the graph to visualize it using TensorBoard.
-tensorflow.summary.FileWriter(logdir="./log/", graph=sess.graph)
+tensorflow.summary.FileWriter(logdir="../log/", graph=sess.graph)
 #Initializing the variables of the graph.
 sess.run(tensorflow.global_variables_initializer())
 
@@ -290,6 +290,6 @@ sess.close()
 
 #Saving the model after being trained.
 saver = tensorflow.train.Saver()
-save_model_path = "C:\\Users\\Dell\\Desktop\\model\\"
+save_model_path = "../model/"
 save_path = saver.save(sess=sess, save_path=save_model_path+"model.ckpt")
 print("Model saved in : ", save_path)
