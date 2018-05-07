@@ -285,11 +285,11 @@ for patch_num in numpy.arange(num_patches):
     correct = correct.size
     print("Correct predictions/", str(percent * 50000/100), ' : ', correct)
     
-    #Saving the model after being trained.
-    saver = tensorflow.train.Saver()
-    save_model_path = "../model/"
-    save_path = saver.save(sess=sess, save_path=save_model_path+"model.ckpt")
-    print("Model saved in : ", save_path)
+#Saving the model after being trained.
+saver = tensorflow.train.Saver()
+save_model_path = "../model/"
+save_path = saver.save(sess=sess, save_path=save_model_path+"model.ckpt")
+print("Model saved in : ", save_path)
 
 #Closing the session
 sess.close()
