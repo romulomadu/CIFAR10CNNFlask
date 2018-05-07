@@ -19,7 +19,7 @@ def main(sess, graph, img):
     :return:Predicted class label.
     """
     #Dataset path containing a binary file with the labels of classes. Useful to decode the prediction code into a significant textual label.
-    patches_dir = "C:\\Users\\Dell\\Downloads\\Compressed\\cifar-10-python\\cifar-10-batches-py\\"
+    patches_dir = "../data/cifar-10-python/cifar-10-batches-py/"
     dataset_array = numpy.random.rand(1, 32, 32, 3)
     dataset_array[0, :, :, :] = img
 
