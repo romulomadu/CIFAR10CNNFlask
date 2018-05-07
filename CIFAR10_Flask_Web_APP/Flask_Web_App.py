@@ -140,5 +140,5 @@ if __name__ == "__main__":
     """
 
     #Restoring the previously saved trained model.
-    prepare_TF_session(saved_model_path='C:\\Users\\Dell\\Desktop\\model\\')
+    prepare_TF_session(saved_model_path='../model/')
     app.run(host="localhost", port=7777, debug=True)
